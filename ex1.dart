@@ -1,14 +1,3 @@
-// Ex4 :and write a program that prints out all the elements of the list that are less than 5.
-
-// void main() {
-//   var a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
-
-//   for (var number in a) {
-//     if (number >= 5) {
-//       print(number);
-//     }
-//   }
-// }
 // -------------------------------------------------------------
 // ex1 :Create a program that asks the user to enter their name and their age
 //. Print out a message that tells how many years they have to be 100 years old.
@@ -59,5 +48,37 @@
 //   }
 // }
 // --------------------------------------------------------------------------
+// // Ex3 :and write a program that prints out all the elements of the list that are less than 5.
 
+// void main() {
+//   var a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
 
+//   for (var number in a) {
+//     if (number >= 5) {
+//       print(number);
+//     }
+//   }
+// }
+// -----------------------------------------------------------------------------
+// Ex4:
+// import 'dart:io';
+
+// void main() {
+//   while (true) {
+//     stdout.write('Enter a number to check if it is divisor:');
+//     final userInput = stdin.readLineSync();
+
+//     if (userInput != null && userInput.isNotEmpty) {
+//       final numb = double.tryParse(userInput);
+
+//       if (numb != null) {
+//         for (var i = 1; i <= numb; i++) {
+//           if (numb % i == 0) {
+//             print(i);
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// ----------------------------------------------------------------------
