@@ -99,7 +99,7 @@
 //   print(c);
 // }
 
-//another way . 
+//another way .
 // void main() {
 //   List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
 //   List<int> b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 89];
@@ -118,3 +118,55 @@
 //   print(Set.from(a).intersection(Set.from(b)).toList());
 // }
 // ----------------------------------------------------
+// ex6:Ask the user for a string and print out whether this string is a palindrome or not.
+// A palindrome is a string that reads the same forwards and backwards.
+// radar
+
+// ask user=>stdout.write();
+//user word inpuut=>stdin.readLineSync()
+
+// import 'dart:io';
+
+// void main() {
+//   while (true) {
+//     stdout.write('Please enter a word to check if it is palindrome:');
+//     final userInput = stdin.readLineSync();
+
+//     if (userInput != null && userInput.isNotEmpty) {
+//       final resverseInput = userInput.split('').reversed.join();
+
+//       if (userInput == resverseInput) {
+//         print('The word $userInput is palindrome');
+//       } else {
+//         print('The word $userInput is not palindrome');
+//       }
+//     }
+//   }
+// }
+// --------------------------------------------------------------------------
+// ex 7 :
+// Let’s say you are given a list saved in a variable:
+// a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
+// Write a Dart code that takes this list and makes a new list that has only the even elements of this list in it.
+
+void main() {
+  // final a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+  // List evenNumbers = [];
+  // for (var number in a) {
+  //   if (number % 2 == 0) {
+  //     evenNumbers.add(number);
+  //   }
+  // }
+  // print(evenNumbers);
+  List<int> a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+
+  int i = 0;
+  List<int> l = [];
+
+  for (var e in a) {
+    if (++i % 2 == 0) {
+      l.add(e);
+    }
+  }
+  print(l);
+}
