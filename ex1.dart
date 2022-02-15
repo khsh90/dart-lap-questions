@@ -165,43 +165,57 @@
 // Ask for player’s input, compare them, print out a message to the winner.
 // Start---
 
-import 'dart:io';
+// import 'dart:io';
 
-import 'dart:math';
+// import 'dart:math';
 
-var rock = 'Rock';
-var paper = 'Paper';
-var scissors = 'Scissors';
+// var rock = 'Rock';
+// var paper = 'Paper';
+// var scissors = 'Scissors';
 
-enum Options { rock, paper, scissors }
-void main() {
-  while (true) {
-    stdout.write('Please select (R)ock,(P)aper or (S)cissors:');
-    final userInput = stdin.readLineSync();
+// enum Options { rock, paper, scissors }
+// void main() {
+//   while (true) {
+//     stdout.write('Please select (R)ock,(P)aper or (S)cissors:');
+//     final userInput = stdin.readLineSync();
 
-    // -----------------------------------------------------------------
-    final index = Random().nextInt(Options.values.length);
-    final computerSelection = Options.values[index].name;
+//     // -----------------------------------------------------------------
+//     final index = Random().nextInt(Options.values.length);
+//     final computerSelection = Options.values[index].name;
 
-    // -----------------------------------------------------------------
+//     // -----------------------------------------------------------------
 
-    if (userInput != null && userInput.isNotEmpty) {
-      if (userInput == Options.) {
-        print('you select ${Options.rock.name}');
-        print(computerSelection);
-      } else if (userInput == 'P' ||
-          userInput == 'Paper' ||
-          userInput == 'p' ||
-          userInput == 'paper') {
-        print('you select ${Options.paper.name}');
-      } else if (userInput == 'S' ||
-          userInput == 'Scissors' ||
-          userInput == 's' ||
-          userInput == 'scissors') {
-        print('you select ${Options.scissors.name}');
-      } else {
-        print('Invalid selection');
-      }
-    }
-  }
-}
+//     if (userInput != null && userInput.isNotEmpty) {
+//       if (userInput == Options.rock.name &&
+//           computerSelection == Options.scissors.name) {
+//         print('You are the Winner');
+//         print(
+//             'Computer Selecetion:$computerSelection \n Your selection:$userInput');
+//       } else if (userInput == Options.paper.name &&
+//           computerSelection == Options.rock.name) {
+//         print('You are the Winner');
+//         print(
+//             'Computer Selecetion:$computerSelection \n Your selection:$userInput');
+//       } else if (userInput == Options.scissors.name &&
+//           computerSelection == Options.paper.name) {
+//         print('You are the Winner');
+//         print(
+//             'Computer Selecetion:$computerSelection \n Your selection:$userInput');
+//       } else if (userInput == Options.scissors.name &&
+//               computerSelection == Options.scissors.name ||
+//           userInput == Options.paper.name &&
+//               computerSelection == Options.paper.name ||
+//           userInput == Options.rock.name &&
+//               computerSelection == Options.rock.name) {
+//         print('You are the Equal');
+//         print(
+//             'Computer Selecetion:$computerSelection \n Your selection:$userInput');
+//       } else {
+//         print('You loose');
+//         print(
+//             'Computer Selecetion:$computerSelection \n Your selection:$userInput');
+//       }
+//     }
+//   }
+// }
+// ---------------------------------------------------------------------
