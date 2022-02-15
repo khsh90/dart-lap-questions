@@ -269,3 +269,98 @@
 //   }
 // }
 // -------------------------------------------------------------------------------------
+// ex10:Ask the user for a number and determine whether the number is prime or not.
+
+//Do it using a function
+
+// import 'dart:io';
+
+// void getPrimeNumber() {
+//   var numbers = [];
+//   stdout.write('Enter a number to see if it is a prime number or not:');
+
+//   final input = stdin.readLineSync();
+
+//   if (input != null && input.isNotEmpty) {
+//     final primeNumber = int.tryParse(input);
+
+//     if (primeNumber != 0 && primeNumber != null) {
+//       // ---------------------------------------------------------------------
+//       for (var i = 1; i <= primeNumber; i++)
+//         if (primeNumber % i == 0) {
+//           numbers.add(i);
+//         }
+
+//       if (numbers.length == 2) {
+//         print('this is a prime number');
+//       } else {
+//         print('this is not a prime number');
+//       }
+//     }
+
+//     print('the number is $numbers');
+//   }
+// }
+
+// void main() {
+//   getPrimeNumber();
+// }
+
+// ------------------------------------------------------------------
+// ex11:
+// Write a program that takes a list of numbers for example
+
+// a = [5, 10, 15, 20, 25]
+// and makes a new list of only the first and last elements of the given list. For practice, write this code inside a function.
+
+// void getTheFirstAndLast({required List<int> numbersList}) {
+//   var listFirstAndlast = [];
+
+//   final firstNumber = numbersList.first;
+//   final lastNumber = numbersList.last;
+
+//   // listFirstAndlast.add(firstNumber);
+//   // listFirstAndlast.add(lastNumber);
+
+//   listFirstAndlast = [firstNumber, lastNumber];
+//   print(listFirstAndlast);
+// }
+
+// void main() {
+//   getTheFirstAndLast(numbersList: [60, 2, 3, 5, 6, 7, 8, 9, 10]);
+// }
+// ------------------------------------------------------------------
+// ex14:
+//Write a program (using functions!) that asks the user for a long string containing multiple words. Print back to the user the same string,
+// except with the words in backwards order.
+
+// For example, say I type the string:
+
+//   My name is Michele
+// Then I would see the string:
+
+//   Michele is name My
+
+// import 'dart:io';
+
+// void reverseSentence({required String type_The_String}) {
+//   stdout.write('Please type a sentnece:');
+//   final input = stdin.readLineSync();
+
+//   if (input != null && input.isNotEmpty) {
+//     final listWord = input.split(' ');
+//     final reverseWord = listWord.reversed;
+
+//     final oneLine = reverseWord.join(' ');
+
+//     print(' print split : $listWord');
+//     print(' print reversed : $reverseWord');
+//     print(' print join : $oneLine');
+//   }
+// }
+
+// void main() {
+//   reverseSentence(type_The_String: 'Hello khaled');
+// }
+// -----------------------------------------------------------------
+// ex15: 
