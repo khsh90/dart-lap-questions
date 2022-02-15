@@ -149,7 +149,9 @@
 // a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
 // Write a Dart code that takes this list and makes a new list that has only the even elements of this list in it.
 
-<<<<<<< HEAD
+// <<<<<<< import 'dart:math';
+
+// HEAD
 // void main() {
 //   final a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
 //   List evenNumbers = [];
@@ -220,3 +222,50 @@
 //   }
 // }
 // ---------------------------------------------------------------------
+// ex9:
+// Generate a random number between 1 and 100. Ask the user to guess the number,
+// then tell them whether they guessed too low, too high, or exactly right.
+
+// Keep track of how many guesses the user has taken, and when the game ends, print this out.
+
+// import 'dart:io';
+// import 'dart:math';
+
+// void main() {
+//   var randomNumber = Random().nextInt(100);
+//   final userGuesses = <int>[];
+//   print('the Random number is :$randomNumber');
+
+//   while (true) {
+//     stdout.write('Guess the number between 1 to 100:');
+//     final userGuessStr = stdin.readLineSync();
+//     if (userGuessStr != null && userGuessStr.isNotEmpty) {
+//       final userGuessInt = int.tryParse(userGuessStr);
+
+//       // ---------------------------------------------------
+//       if (userGuessInt != 0 && userGuessInt != null) {
+//         //  --------------------------------------------------------------------
+
+//         if (randomNumber < userGuessInt) {
+//           print('You are too low');
+//           userGuesses.add(userGuessInt);
+//           continue;
+//         } else if (randomNumber > userGuessInt) {
+//           print('You are two higt');
+//           userGuesses.add(userGuessInt);
+//           continue;
+//         } else if (userGuessInt == randomNumber) {
+//           print('you are exatcly right , your fall guesses :');
+
+//           userGuesses.forEach(print);
+//           break;
+//         }
+
+//         //  --------------------------------------------------------------------
+//       }
+
+//       // ----------------------------------------------------
+//     }
+//   }
+// }
+// -------------------------------------------------------------------------------------
