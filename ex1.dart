@@ -275,13 +275,13 @@
 //   reverseSentence(type_The_String: 'Hello khaled');
 // }
 // -----------------------------------------------------------------
-// ex15: 
+// ex15:
 // Write a password generator in Dart. Be creative with how you generate
-//  passwords - strong passwords have a mix of lowercase letters, uppercase letters, 
-//numbers, and symbols. The passwords should be random, generating 
+//  passwords - strong passwords have a mix of lowercase letters, uppercase letters,
+//numbers, and symbols. The passwords should be random, generating
 //a new password every time the user asks for a new password. Include your run-time code in a main method.
 
-// Ask the user how strong they want their password to be. For weak 
+// Ask the user how strong they want their password to be. For weak
 // passwords, pick a word or two from a list.
 
 // :exclamation: Do not use the generated password in your real accounts. Use 1password.
@@ -358,20 +358,48 @@
 
 // Randomly generate a 4-digit number. Ask the user to guess a
 //  4-digit number. For every digit the user guessed correctly
-//   in the correct place, they have a “cow”. For every digit 
+//   in the correct place, they have a “cow”. For every digit
 //   the user guessed correctly in the wrong place is a “bull.”
 
-// Every time the user makes a guess, tell them how many “cows” 
+// Every time the user makes a guess, tell them how many “cows”
 // and “bulls” they have. Once the user guesses the correct number
 // , the game is over. Keep track of the number of guesses the
 //  user makes throughout the game and tell the user at the end.
 
+// generte 4 digit number ---- done
+// ask user to guess the 4 digit number ---- dome
+// every digit gusssed in correct place will  have a cow
+// eve digit gussed in wrong place will have a bull
+// every time guess tell how many cow and bull they have
+// ocnce user guess the number the game is over
+//print in the end the number that user entered
 
-// generte 4 digit number 
-// ask user to guess the 4 digit number 
-// every digit gusssed in correct place will  have a cow 
-// eve digit gussed in wrong place will have a bull 
-// every time guess tell how many cow and bull they have 
-// ocnce user guess the number the game is over 
-//print in the end the number that user entered 
+import 'dart:io';
+import 'dart:math';
 
+void numberGeneration({required String input}) {
+  final random = Random();
+  final numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+  final generateRandomNumber =
+      List.generate(4, (_) => random.nextInt(numbers.length));
+  var userInput = input.split('');
+
+  var radomMap = generateRandomNumber.asMap();
+  var userMap = userInput.asMap();
+
+  // print('user map :$radomMap');
+  // print('user map :$userMap');
+
+  // print('The generated numbers are :$generateRandomNumber');
+  // print('user input:$userInput');
+}
+
+void main() {
+  stdout.write('Guess the 4 digit number:');
+  final userInput = stdin.readLineSync();
+
+  if (userInput != null && userInput.isNotEmpty) {
+    numberGeneration(input: userInput);
+  }
+}
