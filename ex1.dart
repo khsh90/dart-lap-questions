@@ -374,7 +374,70 @@
 
 // :exclamation: Do not use the generated password in your real accounts. Use 1password.
 
+// ---------------------------------------------------------
+// ex15 :
 
-void main (){
+// import 'dart:io';
+// import 'dart:math';
 
-}
+// String lowerCaseLetter = 'qwertyuiopasdfghjklzxcvbnm';
+// String upperCaseLetter = lowerCaseLetter.toUpperCase();
+// String numbers = '1234567890';
+// String symbols = '!@#%^&*()_:?';
+
+// void main() {
+//   // var arrLowerCase = lowerCaseLetter.split('');
+//   // var arrUpperCase = upperCaseLetter.split('');
+//   // var arrNumbers = numbers.split('');
+//   // var arrSymbols = symbols.split('');
+//   // -----------------------------------------------
+
+//   var random = new Random();
+//   var randomLowereCase = List.generate(
+//           9, (index) => lowerCaseLetter[random.nextInt(lowerCaseLetter.length)])
+//       .join();
+
+//   var randomUpperCase = List.generate(
+//           9, (index) => upperCaseLetter[random.nextInt(upperCaseLetter.length)])
+//       .join();
+
+//   var randomNumber =
+//       List.generate(9, (index) => numbers[random.nextInt(numbers.length)])
+//           .join();
+
+//   var randomSymbols =
+//       List.generate(6, (index) => symbols[random.nextInt(symbols.length)])
+//           .join();
+
+//   var strongPassword =
+//       randomSymbols + randomUpperCase + randomNumber + randomUpperCase;
+
+//   // ------------------------------------------------
+
+//   stdout.write('How Strong Password you want ,  Weak or Strong ');
+
+//   final userInput = stdin.readLineSync();
+
+//   if (userInput != null && userInput.isNotEmpty) {
+//     // -------------------------------------
+//     while (true) {
+//       if (userInput == 'Weak') {
+//         print(
+//             ' Your Password is:\n $randomLowereCase \n please keep it in safe place');
+//         break;
+//       } else if (userInput == 'Strong') {
+//         print(
+//             'Your password is:\n  $strongPassword \n please keep it in safe place');
+//         break;
+//       } else if (userInput == 'quit') {
+//         print('see you next time');
+//         break;
+//       } else {
+//         print('Invalid input');
+//       }
+//     }
+// // --------------------------------------------
+
+//   }
+// }
+// ------------------------------------------
