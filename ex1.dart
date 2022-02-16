@@ -385,9 +385,35 @@ void numberGeneration({required String input}) {
       List.generate(4, (_) => random.nextInt(numbers.length));
   var userInput = input.split('');
 
-  var radomMap = generateRandomNumber.asMap();
+  var radomMap = {0: 7, 1: 6, 2: 0, 3: 1};
   var userMap = userInput.asMap();
 
+  if (userMap[0] == radomMap[0]) {
+    print('user number:${userMap[0]},random number:${radomMap[0]}');
+  }
+  if (userMap[1] == radomMap[1]) {
+    print('user number:${userMap[1]},random number:${radomMap[1]}');
+  }
+  if (userMap[2] == radomMap[2]) {
+    print('user number:${userMap[2]},random number:${radomMap[2]}');
+  }
+  if (userMap[3] == radomMap[3]) {
+    print('user number:${userMap[3]},random number:${radomMap[3]}');
+  }
+  print('random gueses $radomMap');
+
+// ------------------------------------------
+  // radomMap.forEach((randomKey, randomValue) {
+  //   userMap.forEach((userkey, uservalue) {
+  //     if (randomKey == userkey) {
+  //       if (randomValue == randomKey) {
+  //         print('random value:$randomValue,user value:$uservalue');
+  //       } else {
+  //         print('not equal');
+  //       }
+  //     }
+  //   });
+  // });
   // print('user map :$radomMap');
   // print('user map :$userMap');
 
