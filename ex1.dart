@@ -353,5 +353,25 @@
 //   }
 // }
 // ------------------------------------------
+// ex16:
+// Create a program that will play the “cows and bulls” game with the user. The game works like this:
 
+// Randomly generate a 4-digit number. Ask the user to guess a
+//  4-digit number. For every digit the user guessed correctly
+//   in the correct place, they have a “cow”. For every digit 
+//   the user guessed correctly in the wrong place is a “bull.”
+
+// Every time the user makes a guess, tell them how many “cows” 
+// and “bulls” they have. Once the user guesses the correct number
+// , the game is over. Keep track of the number of guesses the
+//  user makes throughout the game and tell the user at the end.
+
+
+// generte 4 digit number 
+// ask user to guess the 4 digit number 
+// every digit gusssed in correct place will  have a cow 
+// eve digit gussed in wrong place will have a bull 
+// every time guess tell how many cow and bull they have 
+// ocnce user guess the number the game is over 
+//print in the end the number that user entered 
 
