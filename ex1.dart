@@ -367,7 +367,7 @@
 //  user makes throughout the game and tell the user at the end.
 
 // generte 4 digit number ---- done
-// ask user to guess the 4 digit number ---- dome
+// ask user to guess the 4 digit number ---- done
 // every digit gusssed in correct place will  have a cow
 // eve digit gussed in wrong place will have a bull
 // every time guess tell how many cow and bull they have
@@ -381,44 +381,73 @@ void numberGeneration({required String input}) {
   final random = Random();
   final numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-  final generateRandomNumber =
+  final generateRandomNumbers =
       List.generate(4, (_) => random.nextInt(numbers.length));
-  var userInput = input.split('');
+  var stringUserInput = input.split('');
+  List<int> userInput = [];
 
-  var radomMap = {0: 7, 1: 6, 2: 0, 3: 1};
+  stringUserInput.forEach((element) {
+    var intElemt = int.tryParse(element);
+    if (intElemt != null) {
+      userInput.add(intElemt);
+    }
+  });
+
+  var radomMap = {0: 1, 1: 4, 2: 2, 3: 3};
   var userMap = userInput.asMap();
 
-  if (userMap[0] == radomMap[0]) {
-    print('user number:${userMap[0]},random number:${radomMap[0]}');
-  }
-  if (userMap[1] == radomMap[1]) {
-    print('user number:${userMap[1]},random number:${radomMap[1]}');
-  }
-  if (userMap[2] == radomMap[2]) {
-    print('user number:${userMap[2]},random number:${radomMap[2]}');
-  }
-  if (userMap[3] == radomMap[3]) {
-    print('user number:${userMap[3]},random number:${radomMap[3]}');
-  }
-  print('random gueses $radomMap');
+  // print('random map $radomMap');
+  // print('user map $userMap');
 
-// ------------------------------------------
-  // radomMap.forEach((randomKey, randomValue) {
-  //   userMap.forEach((userkey, uservalue) {
-  //     if (randomKey == userkey) {
-  //       if (randomValue == randomKey) {
-  //         print('random value:$randomValue,user value:$uservalue');
-  //       } else {
-  //         print('not equal');
-  //       }
-  //     }
-  //   });
-  // });
-  // print('user map :$radomMap');
-  // print('user map :$userMap');
+  var randomKey0;
+  var randomKey1;
+  var randomKey2;
+  var randomKey3;
+// --------------------------
+  var randomValue0;
+  var randomValue1;
+  var randomValue2;
+  var randomValue3;
 
-  // print('The generated numbers are :$generateRandomNumber');
-  // print('user input:$userInput');
+  radomMap.forEach((randomKey, randomValue) {
+    if (randomKey == 0) {
+      randomKey0 = randomKey;
+      randomValue0 = randomValue;
+    }
+    if (randomKey == 1) {
+      randomKey1 = randomKey;
+      randomValue1 = randomValue;
+    }
+    if (randomKey == 2) {
+      randomKey2 = randomKey;
+      randomValue2 = randomValue;
+    }
+    if (randomKey == 3) {
+      randomKey3 = randomKey;
+      randomValue3 = randomValue;
+    }
+  });
+
+  userMap.forEach((userKey, userValue) {
+    // ----------------Cow value----------------------
+    if (userKey == randomKey0 && userValue == randomValue0) {
+      print(' key $userKey :$userValue');
+      print('Cow');
+    }
+    if (userKey == randomKey1 && userValue == randomValue1) {
+      print(' key $userKey :$userValue');
+      print('Cow');
+    }
+    if (userKey == randomKey2 && userValue == randomValue2) {
+      print(' key $userKey :$userValue');
+      print('Cow');
+    }
+    if (userKey == randomKey3 && userValue == randomValue3) {
+      print(' key $userKey :$userValue');
+      print('Cow');
+    }
+// ---------------------bull-----------------------------
+  });
 }
 
 void main() {
