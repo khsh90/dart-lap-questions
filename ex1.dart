@@ -368,8 +368,8 @@
 
 // generte 4 digit number ---- done
 // ask user to guess the 4 digit number ---- done
-// every digit gusssed in correct place will  have a cow
-// eve digit gussed in wrong place will have a bull
+// every digit gusssed in correct place will  have a cow ---done
+// every digit gussed in wrong place will have a bull ---- done
 // every time guess tell how many cow and bull they have
 // ocnce user guess the number the game is over
 //print in the end the number that user entered
@@ -409,6 +409,10 @@ void numberGeneration({required String input}) {
   var randomValue2;
   var randomValue3;
 
+  // --------------------------------------------
+  var numberOfCow = 1;
+  var numberOfBull = 1;
+
   radomMap.forEach((randomKey, randomValue) {
     if (randomKey == 0) {
       randomKey0 = randomKey;
@@ -428,33 +432,96 @@ void numberGeneration({required String input}) {
     }
   });
 
+  // ----------------------------------------------------------
+  var userKey0;
+  var userKey1;
+  var userKey2;
+  var userKey3;
+// --------------------------
+  var userValue0;
+  var userValue1;
+  var userValue2;
+  var userValue3;
+
   userMap.forEach((userKey, userValue) {
-    // ----------------Cow value----------------------
-    if (userKey == randomKey0 && userValue == randomValue0) {
-      print(' key $userKey :$userValue');
-      print('Cow');
+    if (userKey == 0) {
+      userKey0 = userKey;
+      userValue0 = userValue;
     }
-    if (userKey == randomKey1 && userValue == randomValue1) {
-      print(' key $userKey :$userValue');
-      print('Cow');
+    if (userKey == 1) {
+      userKey1 = userKey;
+      userValue1 = userValue;
     }
-    if (userKey == randomKey2 && userValue == randomValue2) {
-      print(' key $userKey :$userValue');
-      print('Cow');
+    if (userKey == 2) {
+      userKey2 = userKey;
+      userValue2 = userValue;
     }
-    if (userKey == randomKey3 && userValue == randomValue3) {
-      print(' key $userKey :$userValue');
-      print('Cow');
+    if (userKey == 3) {
+      userKey3 = userKey;
+      userValue3 = userValue;
     }
-// ---------------------bull-----------------------------
   });
+
+  // ----------------Cow value----------------------
+
+  if (userKey0 == randomKey0 && userValue0 == randomValue0) {
+    print(' key $userKey0 :$userValue0');
+    print('You have ${numberOfCow++} Cows ');
+  }
+  if (userKey1 == randomKey1 && userValue1 == randomValue1) {
+    print(' key $userKey1 :$userValue1');
+    print('You have ${numberOfCow++} Cows ');
+  }
+  if (userKey2 == randomKey2 && userValue2 == randomValue2) {
+    print(' key $userKey2 :$userValue2');
+    print('You have ${numberOfCow++} Cows ');
+  }
+  if (userKey3 == randomKey3 && userValue3 == randomValue3) {
+    print(' key $userKey3 :$userValue3');
+    print('You have ${numberOfCow++} Cows ');
+  }
+  // ---------------------bull-----------------------------
+  print(
+      '---------------------------------------------------------------------------');
+  if (userValue0 == randomValue0 ||
+      userValue0 == randomValue1 ||
+      userValue0 == randomValue2 ||
+      userValue0 == randomValue3) {
+    print('you have a bull on value 0  ,the number is $userValue0 ');
+    print('You have ${numberOfBull++} Bull ');
+  }
+  if (userValue1 == randomValue0 ||
+      userValue1 == randomValue1 ||
+      userValue1 == randomValue2 ||
+      userValue1 == randomValue3) {
+    print('you have a bull on value 1,the number is $userValue1');
+    print('You have ${numberOfBull++} Bull ');
+  }
+  if (userValue2 == randomValue0 ||
+      userValue2 == randomValue1 ||
+      userValue2 == randomValue2 ||
+      userValue2 == randomValue3) {
+    print('you have a bull on value 2,the number is $userValue2');
+    print('You have ${numberOfBull++} Bull ');
+  }
+
+  if (userValue3 == randomValue0 ||
+      userValue3 == randomValue1 ||
+      userValue3 == randomValue2 ||
+      userValue3 == randomValue3) {
+    print('you have a bull on value 3,,the number is $userValue3');
+    print('You have ${numberOfBull++} Bull ');
+  }
 }
 
 void main() {
+  // while (true) {
   stdout.write('Guess the 4 digit number:');
+
   final userInput = stdin.readLineSync();
 
   if (userInput != null && userInput.isNotEmpty) {
     numberGeneration(input: userInput);
   }
+  // }
 }
