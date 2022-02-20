@@ -370,158 +370,224 @@
 // ask user to guess the 4 digit number ---- done
 // every digit gusssed in correct place will  have a cow ---done
 // every digit gussed in wrong place will have a bull ---- done
-// every time guess tell how many cow and bull they have
-// ocnce user guess the number the game is over
+// every time guess tell how many cow and bull they have --- done
+// ocnce user guess the number the game is over ----- done
 //print in the end the number that user entered
 
-import 'dart:io';
-import 'dart:math';
+// import 'dart:io';
+// import 'dart:math';
 
-void numberGeneration({required String input}) {
-  final random = Random();
-  final numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+// final random = Random();
+// final numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-  final generateRandomNumbers =
-      List.generate(4, (_) => random.nextInt(numbers.length));
-  var stringUserInput = input.split('');
-  List<int> userInput = [];
+// final generateRandomNumbers =
+//     List.generate(4, (_) => random.nextInt(numbers.length));
 
-  stringUserInput.forEach((element) {
-    var intElemt = int.tryParse(element);
-    if (intElemt != null) {
-      userInput.add(intElemt);
-    }
-  });
+// var fullUserCows;
+// var userData = [];
 
-  var radomMap = {0: 1, 1: 4, 2: 2, 3: 3};
-  var userMap = userInput.asMap();
+// void numberGeneration({required String input}) {
+//   var numberOfCow = 1;
+//   var numberOfBull = 1;
 
-  // print('random map $radomMap');
-  // print('user map $userMap');
+//   var stringUserInput = input.split('');
+//   List<int> userInput = [];
 
-  var randomKey0;
-  var randomKey1;
-  var randomKey2;
-  var randomKey3;
-// --------------------------
-  var randomValue0;
-  var randomValue1;
-  var randomValue2;
-  var randomValue3;
+//   stringUserInput.forEach((element) {
+//     var intElemt = int.tryParse(element);
+//     if (intElemt != null) {
+//       userInput.add(intElemt);
+//       userData.add(intElemt);
+//     }
+//   });
 
-  // --------------------------------------------
-  var numberOfCow = 1;
-  var numberOfBull = 1;
+//   var radomMap = generateRandomNumbers.asMap();
+//   print('the random  is :$generateRandomNumbers');
+//   print('---------------------------------------------------');
+//   // {0: 1, 1: 4, 2: 2, 3: 3};
+//   var userMap = userInput.asMap();
 
-  radomMap.forEach((randomKey, randomValue) {
-    if (randomKey == 0) {
-      randomKey0 = randomKey;
-      randomValue0 = randomValue;
-    }
-    if (randomKey == 1) {
-      randomKey1 = randomKey;
-      randomValue1 = randomValue;
-    }
-    if (randomKey == 2) {
-      randomKey2 = randomKey;
-      randomValue2 = randomValue;
-    }
-    if (randomKey == 3) {
-      randomKey3 = randomKey;
-      randomValue3 = randomValue;
-    }
-  });
+//   // print('random map $radomMap');
+//   // print('user map $userMap');
 
-  // ----------------------------------------------------------
-  var userKey0;
-  var userKey1;
-  var userKey2;
-  var userKey3;
-// --------------------------
-  var userValue0;
-  var userValue1;
-  var userValue2;
-  var userValue3;
+//   var randomKey0;
+//   var randomKey1;
+//   var randomKey2;
+//   var randomKey3;
+// // --------------------------
+//   var randomValue0;
+//   var randomValue1;
+//   var randomValue2;
+//   var randomValue3;
 
-  userMap.forEach((userKey, userValue) {
-    if (userKey == 0) {
-      userKey0 = userKey;
-      userValue0 = userValue;
-    }
-    if (userKey == 1) {
-      userKey1 = userKey;
-      userValue1 = userValue;
-    }
-    if (userKey == 2) {
-      userKey2 = userKey;
-      userValue2 = userValue;
-    }
-    if (userKey == 3) {
-      userKey3 = userKey;
-      userValue3 = userValue;
-    }
-  });
+//   // --------------------------------------------
 
-  // ----------------Cow value----------------------
+//   radomMap.forEach((randomKey, randomValue) {
+//     if (randomKey == 0) {
+//       randomKey0 = randomKey;
+//       randomValue0 = randomValue;
+//     }
+//     if (randomKey == 1) {
+//       randomKey1 = randomKey;
+//       randomValue1 = randomValue;
+//     }
+//     if (randomKey == 2) {
+//       randomKey2 = randomKey;
+//       randomValue2 = randomValue;
+//     }
+//     if (randomKey == 3) {
+//       randomKey3 = randomKey;
+//       randomValue3 = randomValue;
+//     }
+//   });
 
-  if (userKey0 == randomKey0 && userValue0 == randomValue0) {
-    print(' key $userKey0 :$userValue0');
-    print('You have ${numberOfCow++} Cows ');
-  }
-  if (userKey1 == randomKey1 && userValue1 == randomValue1) {
-    print(' key $userKey1 :$userValue1');
-    print('You have ${numberOfCow++} Cows ');
-  }
-  if (userKey2 == randomKey2 && userValue2 == randomValue2) {
-    print(' key $userKey2 :$userValue2');
-    print('You have ${numberOfCow++} Cows ');
-  }
-  if (userKey3 == randomKey3 && userValue3 == randomValue3) {
-    print(' key $userKey3 :$userValue3');
-    print('You have ${numberOfCow++} Cows ');
-  }
-  // ---------------------bull-----------------------------
-  print(
-      '---------------------------------------------------------------------------');
-  if (userValue0 == randomValue0 ||
-      userValue0 == randomValue1 ||
-      userValue0 == randomValue2 ||
-      userValue0 == randomValue3) {
-    print('you have a bull on value 0  ,the number is $userValue0 ');
-    print('You have ${numberOfBull++} Bull ');
-  }
-  if (userValue1 == randomValue0 ||
-      userValue1 == randomValue1 ||
-      userValue1 == randomValue2 ||
-      userValue1 == randomValue3) {
-    print('you have a bull on value 1,the number is $userValue1');
-    print('You have ${numberOfBull++} Bull ');
-  }
-  if (userValue2 == randomValue0 ||
-      userValue2 == randomValue1 ||
-      userValue2 == randomValue2 ||
-      userValue2 == randomValue3) {
-    print('you have a bull on value 2,the number is $userValue2');
-    print('You have ${numberOfBull++} Bull ');
-  }
+//   // ----------------------------------------------------------
+//   var userKey0;
+//   var userKey1;
+//   var userKey2;
+//   var userKey3;
+// // --------------------------
+//   var userValue0;
+//   var userValue1;
+//   var userValue2;
+//   var userValue3;
 
-  if (userValue3 == randomValue0 ||
-      userValue3 == randomValue1 ||
-      userValue3 == randomValue2 ||
-      userValue3 == randomValue3) {
-    print('you have a bull on value 3,,the number is $userValue3');
-    print('You have ${numberOfBull++} Bull ');
-  }
-}
+//   userMap.forEach((userKey, userValue) {
+//     if (userKey == 0) {
+//       userKey0 = userKey;
+//       userValue0 = userValue;
+//     }
+//     if (userKey == 1) {
+//       userKey1 = userKey;
+//       userValue1 = userValue;
+//     }
+//     if (userKey == 2) {
+//       userKey2 = userKey;
+//       userValue2 = userValue;
+//     }
+//     if (userKey == 3) {
+//       userKey3 = userKey;
+//       userValue3 = userValue;
+//     }
+//   });
 
-void main() {
-  // while (true) {
-  stdout.write('Guess the 4 digit number:');
+//   // ----------------Cow value----------------------
 
-  final userInput = stdin.readLineSync();
+//   if (userKey0 == randomKey0 && userValue0 == randomValue0) {
+//     print(' key $userKey0 :$userValue0');
+//     print('You have ${numberOfCow++} Cows ');
+//   }
+//   if (userKey1 == randomKey1 && userValue1 == randomValue1) {
+//     print(' key $userKey1 :$userValue1');
+//     print('You have ${numberOfCow++} Cows ');
+//   }
+//   if (userKey2 == randomKey2 && userValue2 == randomValue2) {
+//     print(' key $userKey2 :$userValue2');
+//     print('You have ${numberOfCow++} Cows ');
+//   }
+//   if (userKey3 == randomKey3 && userValue3 == randomValue3) {
+//     print(' key $userKey3 :$userValue3');
+//     print('You have ${numberOfCow++} Cows ');
+//   }
+//   fullUserCows = numberOfCow;
 
-  if (userInput != null && userInput.isNotEmpty) {
-    numberGeneration(input: userInput);
-  }
-  // }
-}
+//   // ---------------------bull-----------------------------
+//   print(
+//       '---------------------------------------------------------------------------');
+//   if (userValue0 == randomValue0 ||
+//       userValue0 == randomValue1 ||
+//       userValue0 == randomValue2 ||
+//       userValue0 == randomValue3) {
+//     print('you have a bull on value 0  ,the number is $userValue0 ');
+//     print('You have ${numberOfBull++} Bull ');
+//   }
+//   if (userValue1 == randomValue0 ||
+//       userValue1 == randomValue1 ||
+//       userValue1 == randomValue2 ||
+//       userValue1 == randomValue3) {
+//     print('you have a bull on value 1,the number is $userValue1');
+//     print('You have ${numberOfBull++} Bull ');
+//   }
+//   if (userValue2 == randomValue0 ||
+//       userValue2 == randomValue1 ||
+//       userValue2 == randomValue2 ||
+//       userValue2 == randomValue3) {
+//     print('you have a bull on value 2,the number is $userValue2');
+//     print('You have ${numberOfBull++} Bull ');
+//   }
+
+//   if (userValue3 == randomValue0 ||
+//       userValue3 == randomValue1 ||
+//       userValue3 == randomValue2 ||
+//       userValue3 == randomValue3) {
+//     print('you have a bull on value 3,,the number is $userValue3');
+//     print('You have ${numberOfBull++} Bull ');
+//   }
+// }
+
+// void main() {
+//   while (true) {
+//     print('----------------------------------------------------');
+//     stdout.write('Guess the 4 digit number:');
+//     final userInput = stdin.readLineSync();
+
+//     if (userInput != null && userInput.isNotEmpty) {
+//       numberGeneration(input: userInput);
+//       if (fullUserCows == 5) {
+//         print('You Guess it ');
+//         print('User Choices :$userData');
+//         break;
+//       }
+//     }
+//     print('-------------------------------------------------');
+//   }
+// }
+// -------------------------------------------------
+// another way
+// import 'dart:io';
+// import 'dart:math';
+
+// void main() {
+//   /* Generate random number
+//   Range is between 1000 and 9999 */
+//   final random = Random();
+//   String randomNumber = (1000 + random.nextInt(9999 - 1000)).toString();
+//   print(randomNumber);
+
+//   stdout.write("Welcome to Cows and Bulls\nType 'exit' to stop the game\n");
+
+//   int attempts = 0;
+
+//   // Actual game
+//   while (true) {
+//     int cows = 0;
+//     int bulls = 0;
+//     attempts += 1;
+
+//     stdout.write("\nPlease choose a four digit number: ");
+//     String chosenNumber = stdin.readLineSync();
+
+//     // Conditions to check if the game is over
+//     if (chosenNumber == randomNumber) {
+//       print("Bullseye! You took $attempts attempts");
+//       break;
+//     } else if (chosenNumber == "exit") {
+//       print("Bye bye!");
+//       break;
+//     } else if (chosenNumber.length != randomNumber.length) {
+//       print("Incorrect number. Make sure to give 4 digit number");
+//       continue;
+//     }
+
+//     /* If a digit is in the same index increase the cow
+//     If it is somewhere else increase the bull*/
+//     for (var i = 0; i < randomNumber.length; i++) {
+//       if (chosenNumber[i] == randomNumber[i]) {
+//         cows += 1;
+//       } else if (randomNumber.contains(chosenNumber[i])) {
+//         bulls += 1;
+//       }
+//     }
+//     print("\nAttempts: $attempts \nCows: $cows, Bulls: $bulls");
+//   }
+// }
