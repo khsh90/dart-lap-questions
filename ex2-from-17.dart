@@ -60,28 +60,103 @@
 // A Tic Tac Toe win is 3 in a row - either in a row, a column, or a diagonal.
 // Don’t worry about the case where TWO people have won - assume that in every board there will only be one winner.
 
-import 'dart:io';
+// void main() {
+//   tickTocMatrixGame(
+//     row1: [1, 2, 3],
+//     row2: [4, 5, 6],
+//     row3: [7, 8, 1],
+//   );
+// }
 
-void main() {
-  stdout.write('Please enter the print size : ');
-  final userInput = stdin.readLineSync();
+// void tickTocMatrixGame(
+//     {required List<int> row1,
+//     required List<int> row2,
+//     required List<int> row3}) {
+//   var tickTocMatrix = [row1, row2, row3];
 
-  if (userInput != null && userInput.isNotEmpty) {
-    var userInt = int.tryParse(userInput);
-    if (userInt != 0 && userInt != null) {
-      drowGrid(drowSize: userInt);
-    }
-  }
-  stdout.write('this drow size : $userInput x $userInput ');
-}
+//   var listAll = [];
+//   var list0 = [];
+//   var list1 = [];
+//   var list2 = [];
 
-void drowGrid({required int drowSize}) {
-  var dashes = ' ---';
-  var coulumns = '|   ';
+//   for (var game in tickTocMatrix) {
+//     // print(game);
+//     listAll.add(game[0]);
+//     listAll.add(game[1]);
+//     listAll.add(game[2]);
+//   }
 
-  for (var i = 0; i < drowSize; i++) {
-    print(dashes * drowSize);
-    print(coulumns * drowSize + coulumns);
-  }
-  print(dashes * drowSize);
-}
+//   list0.add(listAll[0]);
+//   list0.add(listAll[1]);
+//   list0.add(listAll[2]);
+// // -------------------------------
+//   list1.add(listAll[3]);
+//   list1.add(listAll[4]);
+//   list1.add(listAll[5]);
+//   // --------------------------------
+//   list2.add(listAll[6]);
+//   list2.add(listAll[7]);
+//   list2.add(listAll[8]);
+// // -------------------------------
+
+// // Row compersion. for player 1
+
+//   if (list0[0] == 1 && list0[1] == 1 && list0[2] == 1) {
+//     print('Player 1 Win');
+//   } else if (list1[0] == 1 && list1[1] == 1 && list1[2] == 1) {
+//     print('Player 1 Win');
+//   } else if (list2[1] == 1 && list2[1] == 1 && list2[2] == 1) {
+//     print('Player 1 Win');
+//   }
+//   // ------------------------------------
+//   // Coulmn compersion. for player 1
+//   else if (list0[0] == 1 && list1[0] == 1 && list2[0] == 1) {
+//     print('Player 1 Win');
+//   } else if (list0[1] == 1 && list1[1] == 1 && list2[1] == 1) {
+//     print('Player 1 Win');
+//   } else if (list0[2] == 1 && list1[2] == 1 && list2[2] == 1) {
+//     print('Player 1 Win');
+//   }
+
+// // -----------------------------------------
+//   // Row compersion. for player 2
+
+//   else if (list0[0] == 2 && list0[1] == 2 && list0[2] == 2) {
+//     print('Player 2 Win');
+//   } else if (list1[0] == 2 && list1[1] == 2 && list1[2] == 2) {
+//     print('Player 2 Win');
+//   } else if (list2[0] == 2 && list2[1] == 2 && list2[2] == 2) {
+//     print('Player 2 Win');
+//   }
+// // -----------------------------------------
+
+//   // Coulmn compersion. for player 2
+//   else if (list0[0] == 2 && list1[0] == 2 && list2[0] == 2) {
+//     print('Player 2 Win');
+//   } else if (list0[1] == 2 && list1[1] == 2 && list2[1] == 2) {
+//     print('Player 2 Win');
+//   } else if (list0[1] == 2 && list1[2] == 2 && list2[2] == 2) {
+//     print('Player 2 Win');
+//   }
+
+//   // ---------------------------------------------------------------
+//   // player 1 diagonal
+
+//   else if (list0[0] == 1 && list1[1] == 1 && list2[2] == 1) {
+//     print('Player 1 Win');
+//   } else if (list0[2] == 1 && list1[1] == 1 && list2[0] == 1) {
+//     print('Player 1 Win');
+//   }
+//   // ---------------------------------------------------------------
+//   // player 2 diagonal
+
+//   else if (list0[0] == 2 && list1[1] == 2 && list2[2] == 2) {
+//     print('Player 2 Win');
+//   } else if (list0[2] == 2 && list1[1] == 2 && list2[0] == 2) {
+//     print('Player 2 Win');
+//   } else {
+//     print('Palyer 1 & 2 equal');
+//   }
+//   // -----------------------------------------------------------------
+// }
+
