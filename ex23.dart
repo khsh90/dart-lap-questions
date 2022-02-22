@@ -12,12 +12,19 @@ import 'dart:io';
 import 'dart:math';
 
 void main(List<String> args) {
-  final textFile = args.first;
-  final file = new File(textFile).readAsLinesSync();
+  readRandomWordFromFile(args);
+}
 
-  final radom = Random();
-  final randomWordLocation = radom.nextInt(file.length);
-  final randomword = [];
+void readRandomWordFromFile(List<String> args) {
+  if (args.isEmpty) {
+    print('use this sentax dart ex23 <filename.txt>');
+    return;
+  }
 
-  print(randomword[randomWordLocation]);
+  final fileFirstItem = args.first;
+  final file = File(fileFirstItem).readAsLinesSync();
+  final randomFileLenght = Random().nextInt(file.length);
+  final randomWord = file[randomFileLenght];
+
+  print(randomWord);
 }
