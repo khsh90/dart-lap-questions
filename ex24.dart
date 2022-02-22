@@ -1,7 +1,8 @@
 /*
 ex24: 
 In the game of Hangman, a clue word is given by the program that the player has to guess, letter by letter. The 
-player guesses one letter at a time until the entire word has been guessed. (In the actual game, the player can only guess 6 letters incorrectly before losing).
+player guesses one letter at a time until the entire word has been guessed.
+ (In the actual game, the player can only guess 6 letters incorrectly before losing).
 
 Let’s say the word the player has to guess is EVAPORATE.
 For this exercise:
@@ -19,8 +20,26 @@ Remember to stop the game when all the letters have been guessed correctly!
 
 */
 
-//the guessed word is EVAPORATE  
-// ask the user to guess the letter 
-//the guessed letter shown in array . 
-//if the usser choose the same letter again in same lenght tell him 
+//the guessed word is EVAPORATE
+// ask the user to guess the letter
+//the guessed letter shown in array .
+//if the usser choose the same letter again in same lenght tell him
 //stop the game when gusse all letter
+
+import 'dart:io';
+
+void main() {
+  var correctWord = 'EVAPORATE';
+  var listString = correctWord.split('');
+  print(listString);
+  stdout.write('Guess the word: ');
+
+  var userInput = stdin.readLineSync();
+  if (userInput != null && userInput.isNotEmpty) {
+    for (var letter in listString) {
+      if (userInput.contains(correctWord)) {
+        print('true');
+      }
+    }
+  }
+}
