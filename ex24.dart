@@ -29,8 +29,10 @@ Remember to stop the game when all the letters have been guessed correctly!
 import 'dart:io';
 
 void main() {
-  var correctWord = 'EVAPORATE';
+  word(correctWord: 'EVAPORATE');
+}
 
+void word({required String correctWord}) {
   final clue = ('---- ' * correctWord.length).split(' ');
   var count = 0;
 
