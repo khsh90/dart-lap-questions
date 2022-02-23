@@ -30,15 +30,40 @@ import 'dart:io';
 
 void main() {
   var correctWord = 'EVAPORATE';
-  var listString = correctWord.split('');
-  print(listString);
-  stdout.write('Guess the word: ');
 
-  var userInput = stdin.readLineSync();
-  if (userInput != null && userInput.isNotEmpty) {
-    for (var letter in listString) {
-      if (userInput.contains(correctWord)) {
-        print('true');
+  final clue = ('---- ' * correctWord.length).split(' ');
+  var count = 0;
+
+  while (true) {
+    stdout.write('Guess the word or the letter by enter it: ');
+    final input = stdin.readLineSync();
+    if (input != null && input.isNotEmpty) {
+      final userInput = input.toUpperCase();
+      if (userInput == correctWord) {
+        print('Bingo you guess it');
+        break;
+      }
+      if (userInput == 'EXIT') {
+        print('see you next time');
+        break;
+      }
+      if (userInput.length > 1) {
+        print('Nope!!');
+        count += 1;
+      }
+      for (var i = 0; i < correctWord.length; i++) {
+        if (correctWord[i] == userInput) {
+          clue[i] = userInput;
+        } else if (clue[i] == userInput) {
+          print('You already enter this letter');
+          continue;
+        }
+      }
+      print(clue.join(' '));
+      if (clue.join('') == correctWord) {
+        print('finally you guess it ');
+        print('Attempt :$count');
+        break;
       }
     }
   }
